@@ -10,14 +10,14 @@ CREATE DATABASE `Forum`
 Création des tables :
 ----------------------
 CREATE TABLE Users(
-        `Id` INT AUTO_INCREMENT PRIMARY KEY,
-        `Username` VARCHAR(30) NOT NULL,
+        `Id` INT PRIMARY KEY,
+        `Username` VARCHAR(50) NOT NULL,
         `Avatar` varchar(1000) NOT NULL,
         `Email` VARCHAR(50) NOT NULL,
         UNIQUE(Email, Username))
 
 CREATE TABLE Boards(
-        `Id`INT AUTO_INCREMENT PRIMARY KEY,
+        `Id`INT PRIMARY KEY,
         `Name` varchar(100) NOT NULL,
         `Description` varchar(500),
         `Development` varchar (50),
@@ -25,16 +25,16 @@ CREATE TABLE Boards(
         `Events` varchar(100) )
 
 CREATE TABLE Topics(
-        `Id` INT AUTO_INCREMENT PRIMARY KEY,
+        `Id` INT PRIMARY KEY,
         `Creation_Date` DATE,
-        `Author` varchar(50),
-        `IDBoard` INT,
+        `Author` INT NOT NULL,
+        `IDBoard` INT NOT NULL,
         `State` BIT NULL DEFAULT 0)
 
 CREATE TABLE Messages(
-         `Id` INT AUTO_INCREMENT PRIMARY KEY,
+         `Id` INT PRIMARY KEY,
          `Content` varchar(5000),
-         `Author` varchar(50),
+         `Author` INT NOT NULL,
          `Creation_Date` DATE,
          `Edition_Date` TIMESTAMP)
 
