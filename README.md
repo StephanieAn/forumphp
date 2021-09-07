@@ -14,6 +14,8 @@ CREATE TABLE Users(
         `Username` VARCHAR(50) NOT NULL,
         `Avatar` varchar(1000) NOT NULL,
         `Email` VARCHAR(50) NOT NULL,
+        `Password` VARCHAR(50) NOT NULL,
+        `Signature` VARCHAR(1000),
         UNIQUE(Email, Username))
 
 CREATE TABLE Boards(
