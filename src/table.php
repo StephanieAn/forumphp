@@ -11,31 +11,32 @@ try{
     $db = new PDO("mysql:host=$servername:dbname=$dbname", $username, $password);
     
     $sqlusers = "CREATE TABLE Users(
-        Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        Id INT AUTO_INCREMENT PRIMARY KEY,
         Username VARCHAR(30) NOT NULL,
         Avatar varchar(1000) NOT NULL,
         Email VARCHAR(50) NOT NULL,
         UNIQUE(Email, Username))";
 
     $sqlboards = "CREATE TABLE Boards(
-        Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        Name varchar(100) NOT NULL,
-        description varchar(500),
+        Id INT AUTO_INCREMENT PRIMARY KEY,
+        `Name` varchar(100) NOT NULL,
+        `Description` varchar(500),
         Development varchar (50),
         Smalltalk varchar(100),
         events varchar(100) )";
 
     $sqltopics = "CREATE TABLE Topics(
-        Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        Creation_Date TIMESTAMP,
+        Id INT AUTO_INCREMENT PRIMARY KEY,
+        Creation_Date DATE,
         Author varchar,
-        State BIT NULL DEFAULT 0)";
+        ID_Board INT(50),
+        `State` BIT NULL DEFAULT 0)";
 
     $sqlmessage = "CREATE TABLE Message(
-         Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+         Id INT AUTO_INCREMENT PRIMARY KEY,
          Content varchar,
          Author varchar,
-         Creation_Date TIMESTAMP,
+         Creation_Date DATE,
          Edition_Date TIMESTAMP)";
 
     $db -> exec($sqlusers);
