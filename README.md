@@ -27,19 +27,27 @@ CREATE TABLE Boards(
 CREATE TABLE Topics(
         `Id` INT AUTO_INCREMENT PRIMARY KEY,
         `Creation_Date` DATE,
-        `Author` varchar KEY,
-        `ID_Board` INT(50) KEY,
+        `Author` varchar(50),
+        `IDBoard` INT,
         `State` BIT NULL DEFAULT 0)
 
 CREATE TABLE Messages(
          `Id` INT AUTO_INCREMENT PRIMARY KEY,
-         `Content` varchar,
-         `Author` varchar KEY,
+         `Content` varchar(5000),
+         `Author` varchar(50),
          `Creation_Date` DATE,
          `Edition_Date` TIMESTAMP)
 
 Liaison des Tables entre elles:
 -------------------------------
+
+ALTER TABLE `Messages`
+  ADD KEY `Author` (`Author`);
+
+ALTER TABLE `Topics`
+  ADD KEY `Author` (`Author`),
+  ADD KEY `IDBoard` (`IDBoard`);
+
 
 ### Contraintes pour la table `Messages`
 
@@ -50,4 +58,4 @@ ALTER TABLE `Messages`
 
 ALTER TABLE `Topics`
   ADD CONSTRAINT `Topics_ibfk_1` FOREIGN KEY (`Author`) REFERENCES `Users` (`Id`),
-  ADD CONSTRAINT `Topics_ibfk_2` FOREIGN KEY (`ID_Board`) REFERENCES `Boards` (`Id`);
+  ADD CONSTRAINT `Topics_ibfk_2` FOREIGN KEY (`IDBoard`) REFERENCES `Boards` (`Id`);
