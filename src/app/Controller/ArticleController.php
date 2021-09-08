@@ -10,9 +10,9 @@ class ArticleController
     public function index()
     {
         $model = new Articles;
-        $articles = $model->getArticles();
+        $articles = $model -> getArticles();
 
-        foreach($articles as $key =>$article){
+        foreach($articles as $key => $article){
             $articles[$key] = new Article($article['title'],$article['description'],$article['publish_date']);
         }
         // Load the view
