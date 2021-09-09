@@ -15,11 +15,11 @@ class User
 
     public function __construct(string $username, string $avatar, string $email, string $passeword, ?string $signature)
     {
-        $this->title = $username;
-        $this->description = $avatar;
-        $this->email = $email;
-        $this->passeword = $passeword;
-        $this->signature = $signature;
+        $this -> title = $username;
+        $this -> avatar = $avatar;
+        $this -> email = $email;
+        $this -> passeword = $passeword;
+        $this -> signature = $signature;
     }
 
     //public function formatPublishDate()

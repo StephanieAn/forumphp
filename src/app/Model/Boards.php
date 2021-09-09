@@ -4,38 +4,37 @@ declare(strict_types=1);
 
 require_once '../app/libraries/DatabaseForum.php'; 
 
-class Users extends DatabaseForum
+class Boards extends DatabaseForum
 {
-    public function getUsers(){
-        $data = $this -> fetchUsers();
+    public function getBoards(){
+        $data = $this -> fetchBoards();
         return $data;
     }
 
-    public function fetchUsers(){
+    public function fetchBoards(){
         $db = $this -> connectDb();
 
         $req = $db -> query(
             'SELECT * 
-            FROM users
-            /*ORDER BY publish_date 
-            DESC */' );
+            FROM boards
+            ' );
 
         return $req -> fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getSingleUser($username){
+    public function getSingleBoard($name){
         
-        $data = $this -> fetchSingleUser($username);
+        $data = $this -> fetchSingleBoard($name);
         return $data;
     }
 
-    public function fetchSingleUser($username){
+    public function fetchSingleBoard($name){
         $db = $this -> connectDb();
 
         $req = $db -> query(
             "SELECT * 
-            FROM users
-            WHERE username = '$username'
+            FROM boards
+            WHERE `name` = '$name'
             ");
 
         return $req -> fetch(PDO::FETCH_ASSOC);

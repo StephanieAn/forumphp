@@ -1,5 +1,5 @@
 <?php
-    require_once '../app/index.php';
+    require_once '../app/require.php';
 ?>
 
 <!DOCTYPE html>
