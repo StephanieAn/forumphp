@@ -10,4 +10,4 @@
     define('URLROOT','http://188.166.24.55/phpmyadmin/index.php');
 
     //Sitename
-    define('SITENAME','forum-papy-brossard');
+    define('SITENAME','Savage Forum');

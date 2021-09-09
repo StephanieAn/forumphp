@@ -6,16 +6,16 @@ declare(strict_types=1);
 class User
 {
 
-    public string $username;
-    public string $avatar;
-    public string $email;
-    public string $passeword;
-    public ?string $signature;
+    public $username;
+    public $avatar;
+    public $email;
+    public $passeword;
+    public $signature;
 
 
-    public function __construct(string $username, string $avatar, string $email, string $passeword, ?string $signature)
+    public function __construct( $username, $avatar, $email, $passeword, $signature)
     {
-        $this -> title = $username;
+        $this -> username = $username;
         $this -> avatar = $avatar;
         $this -> email = $email;
         $this -> passeword = $passeword;

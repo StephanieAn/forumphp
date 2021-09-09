@@ -6,16 +6,16 @@ declare(strict_types=1);
 class Topic
 {
 
-    public string $creationDate;
-    public string $author;
-    public string $id_board;
-    public bool $state;
-    public string $title;
-    public string $content;
+    public $creationDate;
+    public $author;
+    public $id_board;
+    public $state;
+    public $title;
+    public $content;
 
 
 
-    public function __construct(string $creationDate, string $author, string $id_board, bool $state, string $title, string $content)
+    public function __construct($creationDate, $author,$id_board,  $state, $title,  $content)
     {
         $this -> creationDate = $creationDate;
         $this -> author = $author;

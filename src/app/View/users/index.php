@@ -9,7 +9,7 @@
         <?php foreach ($users as $user) : ?>
             
             <?php /*<li><a href="index.php?page=articles-show&title=<?= $article["title"]?>"><?= $article["title"] ?> (<?= $article["publish_date"]?>)</a> </li>*/?>
-            <li><a href="index.php?page=Users-show&Username=<?= $user->Username?>"><?=$user->Username ?>  </a></li>
+            <li><a href="index.php?page=Users-show&Username=<?= $user->username?>"><?=$user->username ?>  </a></li>
         <?php endforeach; ?>
     </ul>
 </section>

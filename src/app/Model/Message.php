@@ -6,13 +6,13 @@ declare(strict_types=1);
 class Message
 {
 
-    public string $author;
-    public string $content;
-    public string $creationDate;
-    public string $editionDate;
+    public $author;
+    public $content;
+    public $creationDate;
+    public $editionDate;
     
 
-    public function __construct(string $author, string $content, string $creationDate, string $editionDate)
+    public function __construct($author, $content, $creationDate, $editionDate)
     {
         $this -> author = $author;
         $this -> content = $content;

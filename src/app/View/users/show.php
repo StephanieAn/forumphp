@@ -5,9 +5,9 @@
 
 <section>
 
-    <!-- <h1><?= $users -> username ?></h1>
+    <h1><?= $users -> username ?></h1>
     <p><?= $users -> avatar ?></p>
-    <p><?= $users -> signature ?></p> -->
+    <p><?= $users -> signature ?></p>
 
 </section>
 

@@ -6,12 +6,12 @@ declare(strict_types=1);
 class Board
 {
 
-    public string $name;
-    public string $description;
-    public string $category;
+    public $name;
+    public $description;
+    public $category;
        
 
-    public function __construct(string $name, string $description, string $category)
+    public function __construct($name, $description, $category)
     {
         $this -> name = $name;
         $this -> description = $description;
