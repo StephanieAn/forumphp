@@ -1,30 +1,33 @@
-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-top: 1rem;
-}
-article {
-  background-color: #ffffff;
-  min-width: 300px;
+@import './mixins.scss';
 
+
+.topic-card {
+  
+  min-width: 300px;
+  max-width: fit-content;
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
 }
 article:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
   transition: 0.5s;
-  
 }
-.topic {
+.topic-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+.topic-header {
   display: flex;
   flex-direction: row;
 }
 .topic-info {
   margin: 1rem;
+  padding: 0px;
 }
-.bottom-infos {
+.card-footer {
   display: flex;
   flex-direction: row;
 }
