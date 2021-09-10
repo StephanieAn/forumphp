@@ -1,0 +1,13 @@
+a {
+    text-decoration: none;
+    color: rgb(77, 74, 74);
+}
+.page-link::before{ 
+    content: '\2039';
+    padding: 0 0.5rem;
+}
+li{
+
+    display: inline;
+    text-align: center;
+}
