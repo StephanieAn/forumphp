@@ -1,0 +1,56 @@
+@import './mixins.scss';
+
+
+.topic-card {
+  
+  min-width: 300px;
+  max-width: fit-content;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
+article:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+}
+.topic-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+.topic-header {
+  display: flex;
+  flex-direction: row;
+}
+.topic-info {
+  margin: 1rem;
+  padding: 0px;
+}
+.card-footer {
+  display: flex;
+  flex-direction: row;
+}
+.bottom-info {
+  display: flex;
+  flex-direction: column;
+  width: 5rem;
+}
+.count {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.infos {
+  font-size: 0.75rem;
+  font-weight: lighter;
+}
+.date {
+  font-size: 1rem;
+  font-weight: 200;
+}
+.topic-desc,
+.date,
+.bottom-info,
+.count {
+  color: rgb(99, 99, 99);
+}

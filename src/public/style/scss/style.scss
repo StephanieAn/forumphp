@@ -1,0 +1,33 @@
+@import './card.scss';
+@import './mixins.scss';
+@import './commentPage/post.scss';
+@import './commentPage/main.scss';
+
+
+
+
+
+* {
+  padding: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+}
+#main {
+  display: flex;
+  flex-direction: row;
+}
+#categories {
+  width: 1200px;
+}
+
+.category {
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  
+}
+
+
