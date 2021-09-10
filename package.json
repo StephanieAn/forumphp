@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/StephanieAn/forumphp/issues"
   },
-  "homepage": "https://github.com/StephanieAn/forumphp#readme"
+  "homepage": "https://github.com/StephanieAn/forumphp#readme",
+  "dependencies": {
+    "sass": "^1.39.2"
+  }
 }

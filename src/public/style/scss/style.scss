@@ -2,8 +2,16 @@
 @import './mixins.scss';
 @import './commentPage/post.scss';
 @import './commentPage/main.scss';
+@import '../scss-thomas/abstract/variable.scss';
+@import '../scss-thomas/base/hidden';
+@import '../scss-thomas/layout/_btn.scss';
+@import '../scss-thomas/layout/breadcrumb.scss';
+@import '../scss-thomas/layout/footer.scss';
 
-
+@import '../scss-thomas/layout/header.scss';
+@import '../scss-thomas/layout/html.scss';
+@import '../scss-thomas/layout/main.scss';
+@import '../scss-thomas/layout/screen.scss';
 
 
 
