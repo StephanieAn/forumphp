@@ -1,0 +1,6 @@
+# allow to rewrite the url
+RewriteEngine On
+# Denied access to the users of the web site
+Deny  from all
+# Rules to rewrite the url
+RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?p=$1
