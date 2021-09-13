@@ -1,12 +1,20 @@
-#social-media {
+footer{
   background: linear-gradient(
     90deg,
     rgba(63, 94, 251, 1) 18%,
     rgba(252, 70, 107, 1) 65%,
     rgba(156, 82, 180, 1) 100%
   );
-  padding-top: 8rem;
-  margin-top: -30px;
+}
+#social-media {
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(63, 94, 251, 1) 18%,
+  //   rgba(252, 70, 107, 1) 65%,
+  //   rgba(156, 82, 180, 1) 100%
+  // );
+  // padding-top: 8rem;
+  // margin-top: -30px;
   position: relative;
   z-index: 1;
 
