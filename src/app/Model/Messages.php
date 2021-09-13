@@ -37,7 +37,6 @@ class Messages extends DatabaseForum
             "SELECT * 
              FROM messages
              WHERE edition_date = '$editionDate'
-             
             ");
 
         return $req -> fetch(PDO::FETCH_ASSOC);

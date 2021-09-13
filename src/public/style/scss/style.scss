@@ -1,23 +1,23 @@
-@import './card.scss';
-@import './mixins.scss';
-@import './commentPage/post.scss';
-@import './commentPage/main.scss';
-@import '../scss-thomas/abstract/variable.scss';
-@import '../scss-thomas/base/hidden';
-@import '../scss-thomas/layout/_btn.scss';
-@import '../scss-thomas/layout/breadcrumb.scss';
-@import '../scss-thomas/layout/footer.scss';
+@import './_card.scss';
+@import './_mixins.scss';
+@import './commentPage/_post.scss';
+@import './commentPage/_main.scss';
+@import '../abstract/_variable.scss';
+@import '../base/_hidden.scss';
+@import '../layout/_btn.scss';
+@import '../layout/_breadcrumb.scss';
+@import '../layout/_footer.scss';
 
-@import '../scss-thomas/layout/header.scss';
-@import '../scss-thomas/layout/html.scss';
-@import '../scss-thomas/layout/main.scss';
-@import '../scss-thomas/layout/screen.scss';
+@import '../layout/_header.scss';
+@import '../layout/_html.scss';
+@import '../layout/_main.scss';
+@import '../layout/_screen.scss';
 
 
 
 * {
   padding: 0;
-  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-size: 20px;
   font-family: 'Rubik', sans-serif;

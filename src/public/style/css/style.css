@@ -1,6 +1,8 @@
 @charset "UTF-8";
+@import '../public/style/scss/style.scss';
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 .topic-card {
   min-width: 300px;
   max-width: fit-content;
@@ -187,13 +189,16 @@ li {
   color: #d473d4;
 }
 
-#social-media {
+footer {
+  background: linear-gradient(90deg, #3f5efb 18%, #fc466b 65%, #9c52b4 100%);
+}
+/* #social-media {
   background: linear-gradient(90deg, #3f5efb 18%, #fc466b 65%, #9c52b4 100%);
   padding-top: 8rem;
   margin-top: -30px;
   position: relative;
   z-index: 1;
-}
+} */
 #social-media ul li {
   list-style-type: none;
   border: 2px solid white;
@@ -265,8 +270,8 @@ header nav .navbar-toggler-icon {
 
 * {
   padding: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin : 0;
+  box-sizing: 0;
   font-size: 20px;
   font-family: "Rubik", sans-serif;
 }

@@ -1,6 +1,8 @@
+
+<body>
 <?php require '../app/View/includes/header.php'?>
 
-<?php // Use any data loaded in the controller here ?>
+<!-- <?php require '../app/Controllers/TopicController.php' ?> -->
 <?php require '../app/View/includes/divdroite.php' ?>
 
 <article class="topic-card">
@@ -31,3 +33,4 @@
     </article>
 
 <?php require '../app/View/includes/footer.php'?>
+</body>
