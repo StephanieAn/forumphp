@@ -45,9 +45,10 @@
             <li class="">
               <a href="#" class="text-nowrap list-dark">All times are UTC</a>
             </li>
-          </ul><a id="btn-back-to-top" class="btn btn-floating btn-lg" href="#header-id"></a>
+          </ul>
         </div>
       </div>
+      <button id="btn-back-to-top"><a  class="btn btn-floating btn-lg" href="#header-id"> ^ </a></button>
     </div>
   </footer>
   </html>

@@ -2,29 +2,62 @@
 
 header {
   filter: hue-rotate(270deg);
+  //background: black;
+  background-image: url('https://raw.githubusercontent.com/StephanieAn/forumphp/main/src/public/img/elephant.jpg') ;
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
 
-  #title {
-    font-size: clamp(30px, 15vw, 10rem);
+  height: 20rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  
+
+  h1 {
+    font-size: clamp(30px, 15vw, 5rem);
     color: white;
     text-transform: uppercase;
     font-family: "Urbanist", sans-serif;
     font-weight: 300;
-    padding: 6rem 0;
+    padding: 2rem 0;
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   nav {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2.5rem;
+    
+
     li {
-      font-size: 30px;
+     font-size: 1.5rem;
       font-weight: 500;
+      // position: absolute;
+      
     }
 
     .nav-item {
+      // justify-content: flex-end;
+      // align-items: center;
       font-family: "Urbanist", sans-serif;
-      font-size: 35px;
+      font-size: 2rem;
       font-weight: 700;
+      
 
       i {
-        margin-right: 1rem;
+        margin-right: 0.2rem;
+      }
+
+      a{
+        color: white;
+        font-size: 1rem;
+        margin-left: 0.8rem;
       }
     }
 
@@ -33,3 +66,4 @@ header {
     }
   }
 }
+

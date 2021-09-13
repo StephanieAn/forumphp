@@ -1,17 +1,15 @@
-@import './_card.scss';
-@import './_mixins.scss';
+@import './layout/_card.scss';
+@import './abstract/_mixins.scss';
 @import './commentPage/_post.scss';
 @import './commentPage/_main.scss';
-@import '../abstract/_variable.scss';
-@import '../base/_hidden.scss';
-@import '../layout/_btn.scss';
-@import '../layout/_breadcrumb.scss';
-@import '../layout/_footer.scss';
-
-@import '../layout/_header.scss';
-@import '../layout/_html.scss';
-@import '../layout/_main.scss';
-@import '../layout/_screen.scss';
+@import './base/_hidden.scss';
+@import './layout/_btn.scss';
+@import './layout/_breadcrumb.scss';
+@import './layout/_footer.scss';
+@import './layout/_header.scss';
+@import './layout/_html.scss';
+@import './layout/_main.scss';
+@import './layout/_screen.scss';
 
 
 
@@ -35,7 +33,6 @@
   border-radius: 5px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  
 }
 
 

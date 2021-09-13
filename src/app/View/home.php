@@ -1,4 +1,5 @@
 <?php require '../app/View/includes/header.php'?>
+<?php require '../app/View/includes/btn.php'?>
 <?php require '../app/View/includes/divdroite.php'; ?>
 <?php // Use any data loaded in the controller here
  ?>

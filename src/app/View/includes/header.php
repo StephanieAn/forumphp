@@ -1,43 +1,27 @@
 <? require_once '../app/Config/config.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-        <link rel="stylesheet" href="../public/style/css/style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/style/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum La Savane></title>
-       
+    <title>Forum La Savane></title>    
 </head>
+
 <body class="bg-light">
 <header class="header">
 
     <nav class="navbar navbar-expand-lg navbar-light justify-content-end p-5 ">
-        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
-    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
-        class="fas fa-bars fa-1x"></i></span></button>
+        
         <div class="collapse navbar-collapse text-right" id="navbarSupportedContent1">
             <div class="w-100 h4 navbar-nav">
             <ul class="navbar-nav mr-auto d-flex justify-content-end w-100">
-                <?php
-                if (isset($_SESSION["user"])) :
-                    $infos = infos();
-                    if ($infos["userLevel"] == "2") :
-                        ?>
-                        <li class="nav-item">
-                        <a class="nav-item nav-link text-light mx-3" href="#"><i class="fas fa-user-shield"></i> Admin </a>
-                        </li>
-                   <?php
-                    endif;
-                endif;
-                ?>
-                <li class="nav-item">
-                <a class="nav-item nav-link active text-light mx-3" href="/index.php">
-                    <i class="fas fa-home"></i> Home</a>
-                </li>
+                
               <?php
                 if (isset($_SESSION["user"])) :
                     ?>
@@ -72,5 +56,8 @@
             </div>
         </a>
     </nav>
+
     <h1 class="text-center titre__Header align-items-center">LA SAVANE</h1>
+
+    
 </header>
