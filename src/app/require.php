@@ -19,6 +19,7 @@ require '../app/Controllers/TopicController.php';
 require '../app/Controllers/UserController.php';
 require '../app/Controllers/HomepageController.php';
 require '../app/Controllers/BoardController.php';
+require '../app/Controllers/logout_session.php';
 
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)

@@ -22,6 +22,14 @@ class User
         $this -> signature = $signature;
     }
 
+    // public function createUser(){
+    //     $db = $this -> connectDb();
+    //     $db = prepare("
+    //     INSERT INTO Users (username,email,avatar,passeword,signature) 
+    //     VALUE(?,?,?,?,?)")
+    //     -> execute([$this->username,$this->email,$this->avatar,$this->password,$this->signature]);
+    // }
+
     //public function formatPublishDate()
     //{
        // $formatted = date('d/M/Y', strtotime($this->publishDate));

@@ -156,7 +156,7 @@ footer {
 }
 
 #social-media {
-  padding-top: 5rem;
+  padding-top: 2rem;
   position: relative;
   z-index: 1;
 }
@@ -164,22 +164,24 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
 }
 #social-media ul li {
   list-style-type: none;
   border: 2px solid white;
   margin-bottom: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  padding: 10px;
+  margin: 0.5rem;
 }
 #social-media ul li i {
-  font-size: 0.5rem;
+  font-size: 1rem;
   color: white;
   display: flex;
   align-items: center;
@@ -279,6 +281,7 @@ footer {
 }
 
 header {
+  position: relative;
   filter: hue-rotate(270deg);
   background-image: url("https://raw.githubusercontent.com/StephanieAn/forumphp/main/src/public/img/elephant.jpg");
   background-size: cover;
@@ -327,6 +330,20 @@ header nav .nav-item a {
 }
 header nav .navbar-toggler-icon {
   padding: 10px;
+}
+
+#main {
+  height: 50rem;
+  background-color: lightgray;
+}
+
+#background {
+  position: relative;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  margin: -2rem 1rem -2rem 1rem;
+  width: 70rem;
 }
 
 * {

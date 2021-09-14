@@ -2,6 +2,8 @@
 
 declare(strict_types = 1);
 
+require_once '../app/Model/Topics.php';
+require_once '../app/Model/Topic.php';
 
 class TopicController
 {

@@ -42,4 +42,13 @@ class Messages extends DatabaseForum
         return $req -> fetch(PDO::FETCH_ASSOC);
     }
 
+    // public function mesCreate(){
+    //     $db = $this -> connectDb();
+
+    //     $req = $db -> prepare(
+    //         "INSERT INTO messages(content)
+    //         VALUES ($content)"
+    //     ) -> execute ([Message::$content]);
+    //     return $req;
+    // }
 }

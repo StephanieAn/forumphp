@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once '../app/libraries/DatabaseForum.php'; 
+require_once '../app/Libraries/DatabaseForum.php'; 
 
 class Users extends DatabaseForum
 {
@@ -40,5 +40,11 @@ class Users extends DatabaseForum
 
         return $req -> fetch(PDO::FETCH_ASSOC);
     }
+    public function createUser(){
+        $db = $this->connectDb();
+        $db->prepare(
+            'INSERT INTO users (nickname,email,password,signature) VALUES (?,?,?,?)'
+        )->execute([$this->username, $this->email, $this->password, $this->signature]);
+       }
 
 }

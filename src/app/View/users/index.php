@@ -1,8 +1,10 @@
 <?php require '../app/View/includes/header.php'?>
-<?php require '../app/View/includes/btn.php'?>
-<?php // Use any data loaded in the controller here ?>
 
-<section>
+<?php // Use any data loaded in the controller here ?>
+<Main id="main">
+<?php require '../app/View/includes/divdroite.php'?>
+<?php require '../app/View/includes/btn.php'?>
+    <section id="background">
     <h1>Users</h1>
     
     <ul>
@@ -12,6 +14,8 @@
             <li><a href="index.php?page=Users-show&Username=<?= $user->username?>"><?=$user->username ?>  </a></li>
         <?php endforeach; ?>
     </ul>
-</section>
+    </section>
+</Main>
+
 
 <?php require '../app/View/includes/footer.php'?>

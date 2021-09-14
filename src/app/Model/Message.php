@@ -31,4 +31,7 @@ class Message
        $formatted = date('d/M/Y', strtotime($this -> editionDate));
        return $formatted;
    }
+   public function create($content){
+        
+   }
 }
