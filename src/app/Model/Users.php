@@ -40,11 +40,12 @@ class Users extends DatabaseForum
 
         return $req -> fetch(PDO::FETCH_ASSOC);
     }
-    public function createUser(){
-        $db = $this->connectDb();
-        $db->prepare(
-            'INSERT INTO users (nickname,email,password,signature) VALUES (?,?,?,?)'
-        )->execute([$this->username, $this->email, $this->password, $this->signature]);
-       }
+
+    // public function createUser(){
+    //     $db = $this->connectDb();
+    //     $db->prepare(
+    //         'INSERT INTO users (username,email,password,signature) VALUES (?,?,?,?)'
+    //     )->execute([$this->username, $this->email, $this->password, $this->signature]);
+    //   }
 
 }

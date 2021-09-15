@@ -2,7 +2,6 @@
 declare(strict_types=1);
 require_once '../app/Config/config.php';
 
-
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
@@ -19,7 +18,7 @@ require '../app/Controllers/TopicController.php';
 require '../app/Controllers/UserController.php';
 require '../app/Controllers/HomepageController.php';
 require '../app/Controllers/BoardController.php';
-require '../app/Controllers/logout_session.php';
+// require '../app/Controllers/logout_session.php';
 
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)

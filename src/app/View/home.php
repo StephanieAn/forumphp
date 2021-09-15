@@ -5,7 +5,7 @@ error_reporting(E_ALL);?>
 
 <?php require '../app/View/includes/header.php'?>
 
-<?php // Use any data loaded in the controller here ?>
+<?php require_once '../app/Controllers/UserController.php' ?>
 
 <main id="main">
 <?php require '../app/View/includes/divdroite.php'?>
@@ -13,13 +13,23 @@ error_reporting(E_ALL);?>
     <section id="background">
     <h1>Users</h1>
     
-    <ul>
-        <?php foreach ($users as $user) : ?>
-            
-            <?php /*<li><a href="index.php?page=articles-show&title=<?= $article["title"]?>"><?= $article["title"] ?> (<?= $article["publish_date"]?>)</a> </li>*/?>
-            <li><a href="index.php?page=users-show&username=<?= $user->username?>"><?=$user->username ?>  </a></li>
+    <ul> 
+    <?php 
+    
+    
+        foreach ($users as $user) : {
+            echo'
+             <li> <a href ="index.php?page=user-show&username='.$user->username.'"></a>' . $user->username. $user->avatar.'</li>
+             <li>'.$user->email.' </li>
+             <li>'.$user->signature.'</li>'
+             ;
+        }
+    ?>
+
+
         <?php endforeach; ?>
-    </ul>
+
+    </ul> 
     </section>
 </Main>
 

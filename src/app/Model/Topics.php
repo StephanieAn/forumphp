@@ -1,7 +1,7 @@
 <?php 
 declare(strict_types=1);
 
-require '../app/Libraries/DatabaseForum.php'; 
+require_once '../app/Libraries/DatabaseForum.php'; 
 
 class Topics extends DatabaseForum
 {

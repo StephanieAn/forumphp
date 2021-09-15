@@ -2,6 +2,9 @@
 
 declare(strict_types = 1);
 
+require_once '../app/Model/Messages.php';
+require_once '../app/Model/Message.php';
+
 
 class MessageController
 {

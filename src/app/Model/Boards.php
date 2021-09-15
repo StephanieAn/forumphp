@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once '../app/libraries/DatabaseForum.php'; 
+require_once '../app/Libraries/DatabaseForum.php'; 
 
 class Boards extends DatabaseForum
 {

@@ -1,20 +1,5 @@
 <?php
-//include all your model files here
-    require '../app/Model/Board.php';
-    require '../app/Model/Message.php';
-    require '../app/Model/Topic.php';
-    //require '../app/Model/Register.php';
-    require '../app/Model/User.php';
-
-//include all your controllers here
-    require '../app/Controllers/BoardController.php';
-    require '../app/Controllers/HomepageController.php';
-    require '../app/Controllers/logout_session.php';
-    require '../app/Controllers/MessageController.php';
-    require '../app/Controllers/new_topic_check.php';
-    require '../app/Controllers/RegisterController.php';    
-    require '../app/Controllers/TopicController.php';
-    require '../app/Controllers/UserController.php';
+    require_once '../app/require.php'
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +12,6 @@
     <link rel="stylesheet" href="./style/css/style.css">
 </head>
 <body>
-    
+
 </body>
 </html>

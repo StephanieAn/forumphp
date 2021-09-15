@@ -5,20 +5,19 @@ declare(strict_types=1);
 
 class User
 {
+    public $username = 'stef';
+    public $avatar = 'elephant';
+    public $email = 'Stef@Gmail.com';
+    public $password = 'test123';
+    public $signature = 'Hello there';
 
-    public $username;
-    public $avatar;
-    public $email;
-    public $passeword;
-    public $signature;
 
-
-    public function __construct( $username, $avatar, $email, $passeword, $signature)
+    public function __construct( $username, $avatar, $email, $password, $signature)
     {
         $this -> username = $username;
         $this -> avatar = $avatar;
         $this -> email = $email;
-        $this -> passeword = $passeword;
+        $this -> password = $password;
         $this -> signature = $signature;
     }
 
