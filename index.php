@@ -8,9 +8,10 @@
 </head>
 <body>
 
-    <?php 
+    <?php
     include("src/public/index.php");
     ?>
+    Is it working?
     
 </body>
 </html>
