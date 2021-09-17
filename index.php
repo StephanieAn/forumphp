@@ -8,9 +8,8 @@
 </head>
 <body>
 
-    <?php 
-    include("src/public/index.php");
-    ?>
+    
+<?php require_once("./src/public/index.php"); ?>
     
 </body>
 </html>
