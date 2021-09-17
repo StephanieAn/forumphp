@@ -1,0 +1,10 @@
+{
+    "name": "stephanie/forumphp",
+    "authors": [
+        {
+            "name": "Stéphanie Antignac",
+            "email": "antignacstephanie17@gmail.com"
+        }
+    ],
+    "require": {}
+}
