@@ -1,0 +1,373 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.topic-card {
+  min-width: 300px;
+  max-width: fit-content;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+article:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+}
+
+.topic-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+
+.topic-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.topic-info {
+  margin: 1rem;
+  padding: 0px;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-info {
+  display: flex;
+  flex-direction: column;
+  width: 5rem;
+}
+
+.count {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.infos {
+  font-size: 0.75rem;
+  font-weight: lighter;
+}
+
+.date {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.topic-desc,
+.date,
+.bottom-info,
+.count {
+  color: #636363;
+}
+
+.post-container {
+  position: relative;
+  background-color: #aa1010;
+  padding: 2px;
+  height: 1000px;
+}
+
+.post {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 8px;
+  margin: 0.5rem 0.5rem;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.username {
+  color: red;
+  margin: 0rem;
+}
+
+.user-role {
+  margin: 0;
+  color: lightgray;
+}
+
+.user-info {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+}
+
+.post-infos {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.fa-quote-left {
+  position: absolute;
+  color: #505050;
+  top: 0.7rem;
+  right: 0.7rem;
+  border-radius: 50%;
+  background-color: #cfcccc;
+  padding: 10px;
+}
+
+.post-pageup {
+  font-size: 10px;
+  color: white;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  padding: 5px;
+  background-color: #505050;
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: #4d4a4a;
+}
+
+.page-link::before {
+  content: "‹";
+  padding: 0 0.5rem;
+}
+
+li {
+  display: inline;
+  text-align: center;
+}
+
+footer {
+  background: linear-gradient(90deg, #3f5efb 18%, #fc466b 65%, #9c52b4 100%);
+}
+
+#social-media {
+  padding-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+#social-media ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+#social-media ul li {
+  list-style-type: none;
+  border: 2px solid white;
+  margin-bottom: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+#social-media ul li i {
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  background-color: #293133;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-bottom {
+  background-color: #293133;
+  display: flex;
+  padding-bottom: 0.4rem;
+}
+.list-bottom li {
+  list-style-type: none;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  padding: 0.4rem;
+}
+.list-bottom li a {
+  text-decoration: none;
+  color: #d473d4;
+  font-size: 0.5rem;
+}
+.list-bottom li a i {
+  color: #d473d4;
+  font-size: 0.5rem;
+}
+.list-bottom li .list-dark {
+  font-size: 0.5rem;
+  color: darkgrey;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+}
+
+.bread-style {
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.bread-item {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.bread-item a {
+  font-size: 2rem;
+}
+.bread-item a i {
+  font-size: 1.8rem;
+  padding: 0.4rem;
+}
+
+.bread-foot {
+  background-color: #293133;
+}
+
+.bread-foot__item {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  color: #d473d4;
+  font-size: 0.5rem;
+  padding: 0.4rem;
+}
+.bread-foot__item a {
+  font-size: 0.5rem;
+  color: #d473d4;
+}
+.bread-foot__item a i {
+  font-size: 0.5rem;
+  color: #d473d4;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  background-color: #d473d4;
+  color: white;
+  border: solid 1px white;
+}
+#btn-back-to-top a {
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  text-justify: center;
+  font-size: 1.5rem;
+}
+
+header {
+  position: relative;
+  filter: hue-rotate(270deg);
+  background-image: url("https://raw.githubusercontent.com/StephanieAn/forumphp/main/src/public/img/elephant.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  height: 20rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+header h1 {
+  font-size: clamp(30px, 15vw, 5rem);
+  color: white;
+  text-transform: uppercase;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 300;
+  padding: 2rem 0;
+  grid-area: 1/1/2/2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header nav {
+  grid-area: 1/2/2/3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2.5rem;
+}
+header nav li {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+header nav .nav-item {
+  font-family: "Urbanist", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+header nav .nav-item i {
+  margin-right: 0.2rem;
+}
+header nav .nav-item a {
+  color: white;
+  font-size: 1rem;
+  margin-left: 0.8rem;
+}
+header nav .navbar-toggler-icon {
+  padding: 10px;
+}
+
+#main {
+  height: 50rem;
+  background-color: lightgray;
+}
+
+#background {
+  position: relative;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  margin: -2rem 1rem -2rem 1rem;
+  width: 70rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: "Rubik", sans-serif;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+}
+
+#categories {
+  width: 1200px;
+}
+
+.category {
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+/*# sourceMappingURL=style.css.map */

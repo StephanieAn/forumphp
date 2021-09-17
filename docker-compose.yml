@@ -2,8 +2,12 @@
 version: "3"
 services:
   php:
+<<<<<<< HEAD
     # image: "becodeorg/php"
     build: "./"
+=======
+    build: './'
+>>>>>>> 481f66a1d071ca4eda6ec3f1d8ae5a39c06498ad
     volumes:
       - "./src:/var/www/html"
     ports:
