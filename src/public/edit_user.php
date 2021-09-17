@@ -1,5 +1,9 @@
 <?php session_start();
+require_once("../App/Controller/edit_controller.php");
+require_once("../App/Controller/check_edit_user.php");
+require_once("../App/View/check_image.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +13,14 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/style.css">
-  <title>Savane</title>
+  <title>savane</title>
 </head><?php
 
   require_once("../App/Controller/check_session.php");
   require_once("../App/Controller/login_control.php");
   require_once("../App/Controller/register.php");
-  require_once("../App/View/check_image.php");
  ?>
 <body class="bg-light">
-  
     <header id="header-id">
       <div
         class=""
@@ -56,7 +58,7 @@
             </ul>
           </div>
         </nav>
-        <h1 id="title" class="display-4">Savane</h1>
+        <h1 id="title" class="display-4">savane</h1>
       </div>
     </div>
     </header>
@@ -73,22 +75,59 @@
           ><i class="fas fa-home"></i>Home</a>
       </li>
       <li class="breadcrumb-item bread-item active" aria-current="page">
-        Board index
+      <a href="index.php" class="text-decoration-none text-dark"
+          >Board Index</a>
+      </li>
+      <li class="breadcrumb-item bread-item">
+        <a href="#" class="text-decoration-none text-dark"
+          >Edit User</a
+        >
       </li>
     </ol>
   </nav>
       </div>
       <div class="row">
+        
         <div class="col-md-9 col-sm col-lg-9">
-          <div class="container pt-5 bg-light d-flex flex-wrap">
-            <?php require("../App/View/board_display.php");?>
+          <div class="container pt-5 bg-light d-flex flex-column">
+              <form class="d-flex flex-column justify-content-center align-items-center py-5" method="POST" enctype="multipart/form-data">
+              <div class="form-group d-flex align-items-center">
+            <label for="clear" class="h4 mr-3">Clear photo</label>
+            <input id="clear" name="clear" type="checkbox" value="true" class="btn btn-primary ml-auto">
+        </div>
+              <?php isImage($_SESSION['avatar'], "80", $_SESSION['email']) ?>
+              <div class="form-group">
+            <label for="avatar">Example file input</label>
+            <input value="<?php echo $_SESSION['avatar']; ?>" type="file" class="form-control-file form-control-lg" id="avatar" name="avatar">
+        </div>
+                <div class="form-group">
+                    <label for="nickname">Nickname</label>
+                    <input value="<?php echo $_SESSION['username']; ?>" name="new-nickname" type="text" class="form-control" id="nickname" aria-describedby="nickname" placeholder="Enter new nickname">
+                </div>
+                <div class="form-group">
+                    <label for="signature">Signature</label>
+                    <input value="<?php echo $_SESSION['signature']; ?>" name="new-signature" type="text" class="form-control" id="signature" placeholder="Enter new signature">
+                </div>
+                <div class="form-group mt-5">
+                    <label class="h5" for="password">Enter password to save the changes</label>
+                    <input name="confirm-password" type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <button name="edit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+      </div>
+      <div class="row">
+            <div class="col-12 mt-5 d-flex">
+              <a id="return-board" class="h4 mr-5 text-dark p-3" href="index.php">&lt; Return to Board Index</a> <a id="jump-to" class="h4 mr-5 text-dark bg-light p-3 ml-auto" href="#">Jump to ^</a>
+            </div>
           </div>
         </div>
+        
         <div class="col-md-3 col-lg-3 px-5">
           <?php include("../App/View/reduced_profile.php"); ?>
            <!-- Search Bar -->
-         <form action="topics.php" method="GET" id="search-bar" class="form-inline flex-nowrap">
-          <input name="search" class="form-control w-100" type="search"
+         <form id="search-bar" class="form-inline flex-nowrap">
+          <input class="form-control w-100" type="search"
           placeholder="Search" aria-label="Search">
           <button class="btn btn-
           info" type="submit"><i class="fas fa-search"></i>
@@ -97,13 +136,7 @@
           info" type="submit"><i class="fas fa-cog"></i>
         </button>
           </form> 
-          <hr>
-          <?php include("../App/View/form_display.php") ?>
           
-      
-        </div>
-      </div>
-    </div>
   </main>
   <footer>
   <div class="container-fluid" id="social-media">

@@ -1,5 +1,46 @@
-<?php session_start();
+<?Php
+session_start();
+require ("../App/Model/comment_editor.php");
+
+$topic_number=$_GET["topic_num"];
+
+$final_input=prefilled($topic_number);
+
+$resultat=check_authorID($topic_number);
+
+if (empty($_SESSION['id'])) 
+{
+
+    header("Location: messages.php?topic_number=".$topic_number);
+
+   
+
+}
+else {
+
+
+ if ($_SESSION["id"]===$resultat){
+    if (isset($_POST['submit-modifier']))
+    {
+        
+        $new_content=$_POST['first-comment'];
+    
+        modify_first_comment($topic_number,$new_content);
+    
+        header("Location: messages.php?topic_number=".$topic_number);
+    }
+    
+}
+else{
+    header("Location: messages.php?topic_number=".$topic_number);
+}   
+}
+
+
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +50,20 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/style.css">
-  <title>Savane</title>
+  <title>savane</title>
 </head><?php
 
   require_once("../App/Controller/check_session.php");
   require_once("../App/Controller/login_control.php");
   require_once("../App/Controller/register.php");
-  require_once("../App/View/check_image.php");
  ?>
 <body class="bg-light">
-  
     <header id="header-id">
       <div
         class=""
         style="
           background: center/cover
-            url('https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_960_720.jpg');
+            url('https://cdn.pixabay.com/photo/2016/07/29/19/19/railway-1555348_960_720.jpg');
         "
       >
         <div class="container-fluid p-5 text-center">
@@ -56,7 +95,7 @@
             </ul>
           </div>
         </nav>
-        <h1 id="title" class="display-4">Savane</h1>
+        <h1 id="title" class="display-4">savane</h1>
       </div>
     </div>
     </header>
@@ -69,7 +108,7 @@
   <nav class="" aria-label="breadcrumb">
     <ol class="breadcrumb bread-style align-text-bottom">
       <li class="breadcrumb-item bread-item">
-        <a href="index.php" class="text-decoration-none text-dark"
+        <a href="#" class="text-decoration-none text-dark"
           ><i class="fas fa-home"></i>Home</a>
       </li>
       <li class="breadcrumb-item bread-item active" aria-current="page">
@@ -77,33 +116,21 @@
       </li>
     </ol>
   </nav>
-      </div>
-      <div class="row">
-        <div class="col-md-9 col-sm col-lg-9">
-          <div class="container pt-5 bg-light d-flex flex-wrap">
-            <?php require("../App/View/board_display.php");?>
-          </div>
+
+  <div class="col-12">
+  <h2 class=" m-auto text-center m-5 bg-primary rounded border border-dark p-3 text-white w-25">Edit comment</h2>
+      <form method="POST" class="text-center">
+      <div class="form-group w-25 mx-auto"  >
+        <textarea type="text" class='form-control w-100' name="first-comment"  rows ="5" style="resize:none; "><?php echo $final_input['Content'] ?></textarea> >
+  </div>
+        <div class="d-flex justify-content-center">
+        <button id="submit" type="submit" name="submit-modifier" class="btn btn-primary mt-5 w-25 h2">Modify</button>
+
         </div>
-        <div class="col-md-3 col-lg-3 px-5">
-          <?php include("../App/View/reduced_profile.php"); ?>
-           <!-- Search Bar -->
-         <form action="topics.php" method="GET" id="search-bar" class="form-inline flex-nowrap">
-          <input name="search" class="form-control w-100" type="search"
-          placeholder="Search" aria-label="Search">
-          <button class="btn btn-
-          info" type="submit"><i class="fas fa-search"></i>
-        </button>
-        <button class="btn btn-
-          info" type="submit"><i class="fas fa-cog"></i>
-        </button>
-          </form> 
-          <hr>
-          <?php include("../App/View/form_display.php") ?>
-          
-      
-        </div>
+      </form>
       </div>
-    </div>
+
+
   </main>
   <footer>
   <div class="container-fluid" id="social-media">
@@ -130,16 +157,29 @@
           </nav>
         </div>
         <div class="col-sm-12 col-md-9 col-lg-9">
-        <ul class="list-bottom d-flex justify-content-end align-items-center mt-2 flex-wrap justify-content-xs-center ">
-            <li class="mr-3"><a href="#" class="text-nowrap "><i class="p-2 fas fa-envelope"></i>Contact us</a></li>
-            <li class="mr-3"><a href="#" class="text-nowrap "><i class="p-2 fas fa-shield-alt"></i>The team</a></li>
-            <li class="mr-3"><a href="#" class="text-nowrap "><i class="p-2 fas fa-check"></i>Terms</a></li>
-            <li class="mr-3"><a href="#" class="text-nowrap "><i class="p-2 fas fa-lock"></i>Privacy</a></li>
-            <li class="mr-3"><a href="#" class="text-nowrap "><i class="p-2 fas fa-users"></i>Members</a></li>
-            <li class="mr-3"><a href="#" class="text-nowrap "><i class="p-2 fas fa-trash-alt"></i>Delete cookies</a></li>
-            <li class=""><a href="#" class="text-nowrap list-dark">All times are UTC</a></li>
-          </ul>
-          <a id="btn-back-to-top" class="btn btn-floating btn-lg" href="#header-id"></a>
+          <ul class="list-bottom d-flex justify-content-end align-items-center mt-2 flex-wrap justify-content-xs-center">
+            <li class="mr-3">
+              <a href="#" class="text-nowrap">Contact us</a>
+            </li>
+            <li class="mr-3">
+              <a href="#" class="text-nowrap">The team</a>
+            </li>
+            <li class="mr-3">
+              <a href="#" class="text-nowrap">Terms</a>
+            </li>
+            <li class="mr-3">
+              <a href="#" class="text-nowrap">Privacy</a>
+            </li>
+            <li class="mr-3">
+              <a href="#" class="text-nowrap">Members</a>
+            </li>
+            <li class="mr-3">
+              <a href="#" class="text-nowrap">Delete cookies</a>
+            </li>
+            <li class="">
+              <a href="#" class="text-nowrap list-dark">All times are UTC</a>
+            </li>
+          </ul><a id="btn-back-to-top" class="btn btn-floating btn-lg" href="#header-id"></a>
         </div>
       </div>
     </div>
@@ -149,3 +189,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
