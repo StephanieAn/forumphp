@@ -8,19 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tompouday/hell_forum.git"
+    "url": "git+https://github.com/Tompouday/forumphp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tompouday/hell_forum/issues"
+    "url": "https://github.com/Tompouday/forumphp/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/Tompouday/hell_forum#readme"
-=======
-  "homepage": "https://github.com/StephanieAn/forumphp#readme",
-  "dependencies": {
-    "sass": "^1.39.2"
-  }
->>>>>>> 481f66a1d071ca4eda6ec3f1d8ae5a39c06498ad
+  "homepage": "https://github.com/Tompouday/forumphp#readme"
 }
