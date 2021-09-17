@@ -1,4 +1,6 @@
-<?php session_start();
+<?php session_start(); ?>
+<?php require_once("../App/Controller/check_new_topic.php"); 
+require ("../App/Controller/check_topic.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +14,12 @@
   <title>Tracker</title>
 </head><?php
 
-  require_once("../App/Controller/check_session.php");
+  
   require_once("../App/Controller/login_control.php");
   require_once("../App/Controller/register.php");
   require_once("../App/View/check_image.php");
  ?>
 <body class="bg-light">
-  
     <header id="header-id">
       <div
         class=""
@@ -70,25 +71,65 @@
     <ol class="breadcrumb bread-style align-text-bottom">
       <li class="breadcrumb-item bread-item">
         <a href="index.php" class="text-decoration-none text-dark"
-          ><i class="fas fa-home"></i>Home</a>
+          ><i class="fas fa-home"></i>Home</a
+        >
+      </li>
+      <li class="breadcrumb-item bread-item" aria-current="page">
+       <a class="text-decoration-none text-dark" href="topics.php?board=General">Topics</a> 
       </li>
       <li class="breadcrumb-item bread-item active" aria-current="page">
-        Board index
+        New Topics
       </li>
     </ol>
   </nav>
       </div>
       <div class="row">
         <div class="col-md-9 col-sm col-lg-9">
-          <div class="container pt-5 bg-light d-flex flex-wrap">
-            <?php require("../App/View/board_display.php");?>
+          <h1 class="mx-5">Topic Icon Demos</h1>
+          <div class="container-fluid p-5">
+            <div class="row">
+              <div id="forum-rules" class="col-12 border-left border-danger p-3">
+                <h4 class="text-danger">Forum rules</h4>
+              </div>
+            </div>
+            <div class="row">
+    <div class="col-12">
+      <h2 class="text-center mt-5 bg-info rounded border border-dark p-3 text-white">New Topic</h2>
+    <form method="POST" id="add-topic">
+      <div class="form-group">
+        <label class="h3" for="title">Title</label>
+        <input type="text" name="title" class="form-control" id="title" aria-describedby="title" placeholder="Enter Title" required>
+      </div>
+      <div class="form-group">
+        <label class="h3" for="content">Content</label>
+        <textarea type="text" name="content" class="form-control" id="content" placeholder="Content" required></textarea>
+      </div>
+      <div class="form-check">
+      <label class="h3 mr-5" for="pet-select">Choose a board:</label>
+        <select class="form-select h3" aria-label=".form-select-lg example" name="board-name" id="board-name" required>
+            <option value="">--Please choose a Board--</option>
+            <?php require("../App/View/display_select_board.php");?>
+        </select>  
+    </div>
+      <button id="submit" type="submit" name="add-topic" class="btn btn-primary mt-5 w-25 h2">Submit</button>
+    </form>
+    </div>
+        
+
+    </div>
+  
+            <div class="row">
+              <div class="col-12 mt-5 d-flex">
+                <a id="return-board" class="h4 mr-5 text-dark p-3" href="topics.php">&lt; Return to Board Index</a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3 col-lg-3 px-5">
           <?php include("../App/View/reduced_profile.php"); ?>
-           <!-- Search Bar -->
-         <form action="topics.php" method="GET" id="search-bar" class="form-inline flex-nowrap">
-          <input name="search" class="form-control w-100" type="search"
+          <!-- Search Bar -->
+          <form id="search-bar" class="form-inline flex-nowrap">
+          <input class="form-control w-100" type="search"
           placeholder="Search" aria-label="Search">
           <button class="btn btn-
           info" type="submit"><i class="fas fa-search"></i>
@@ -108,7 +149,7 @@
               </thead>
               <tbody class="bg-light d-flex justify-content-center">
                 <tr>
-                  <?php require("../App/View/last_posts.php"); ?>
+                <?php require("../App/View/last_posts.php"); ?>
                 </tr>
               </tbody>
             </table>
@@ -122,7 +163,23 @@
               </thead>
               <tbody class="bg-light">
                 <tr class="d-flex justify-content-center flex-wrap">
-                 <?php require("../App/View/last_active_display.php"); ?>
+                <?php require("../App/View/last_active_display.php"); ?>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive mt-5">
+            <table id="widget-side" class="table">
+              <thead class="thead bg-dark text-white">
+                <tr>
+                  <th scope="col" class="h3">Blank Widget (ALT block)</th>
+                </tr>
+              </thead>
+              <tbody class="bg-light">
+                <tr class="d-flex justify-content-center flex-wrap">
+                  <td id="last-active-card" class="bg-white w-75 my-3">
+                    <h2>Some information goes here :)</h2>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -141,7 +198,7 @@
         <li class="p-3 mr-4"><a href="#"><i class="fab fa-youtube text-white"></i></a></li>
         <li class="p-3 mr-4"><a href="#"><i class="fab fa-github text-white"></i></a></li>
         <li class="p-3 mr-4"><a href="#"><i class="fab fa-whatsapp text-white"></i></a></li>
-      </ul>
+       </ul>
     </div>
     <div class="container-fluid bg-dark my-n3">
       <div class="row">

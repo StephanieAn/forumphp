@@ -1,24 +1,48 @@
-<?php session_start();
+<?php session_start(); 
+
+if(isset($_POST['add-comment'])) {
+  require "../App/Model/add_comment.php";
+  date_default_timezone_set("Europe/Paris");
+  $topic = $_GET['topic_number'];
+  $author = $_SESSION['id'];
+  $content = $_POST['comment'];
+  $date = date("Y-m-d H:i:s"); 
+
+ add_comment($topic,$date,$author,$content) ;  
+ header("Refresh:0");
+ exit;
+ 
+}
+
+
+
+
+
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/style.css">
-  <title>Tracker</title>
-</head><?php
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Tracker</title>
+  </head><?php
 
-  require_once("../App/Controller/check_session.php");
-  require_once("../App/Controller/login_control.php");
-  require_once("../App/Controller/register.php");
-  require_once("../App/View/check_image.php");
- ?>
+require_once("../App/Controller/check_session.php");
+require_once("../App/Controller/login_control.php");
+require_once("../App/Controller/register.php");
+require_once("../App/View/check_image.php");
+require("../App/Controller/lock_topic.php");
+
+
+?>
 <body class="bg-light">
-  
     <header id="header-id">
       <div
         class=""
@@ -70,24 +94,109 @@
     <ol class="breadcrumb bread-style align-text-bottom">
       <li class="breadcrumb-item bread-item">
         <a href="index.php" class="text-decoration-none text-dark"
-          ><i class="fas fa-home"></i>Home</a>
+          ><i class="fas fa-home"></i>Home</a
+        >
       </li>
       <li class="breadcrumb-item bread-item active" aria-current="page">
         Board index
+      </li>
+      <li class="breadcrumb-item bread-item">
+        <a href="topics.php?board=General" class="text-decoration-none text-dark"
+          >Topics</a
+        >
+      </li>
+      <li class="breadcrumb-item bread-item" aria-current="page">
+        Category
+      </li>
+      <li class="breadcrumb-item bread-item active" aria-current="page">
+        Top Read (Hot)
       </li>
     </ol>
   </nav>
       </div>
       <div class="row">
         <div class="col-md-9 col-sm col-lg-9">
-          <div class="container pt-5 bg-light d-flex flex-wrap">
-            <?php require("../App/View/board_display.php");?>
+          <h1 class="mx-5">Topic Icon Demos</h1>
+         
+        
+          <div class="container-fluid p-5">
+         <div class="row">
+          <div id="forum-rules" class="col-12 border-left border-danger p-3">
+                <h4 class="text-danger">Forum rules</h4>
+              </div>
+          </div>
+         
+          <div class="row">
+              <div class="col-12 d-flex align-items-center justify-content-start m-4">
+
+              
+             
+                <?php require '../App/View/display_Reply.php';?>
+                
+                <div class="dropdown mr-5 pr-3">
+                  <button class="btn btn-secondary dropdown-toggle rounded-pill  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-wrench p-0"></i>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+
+                <form action="topics.php" method="GET" id="search-bar" class="form-inline flex-nowrap" name="search-bar">
+                  <input name="search" class="form-control w-100" type="search" placeholder="Search" aria-label="Search">
+                </form>
+              </div>
+            </div>
+            
+              <div class="container">
+                <?php 
+                require("../App/View/print_messages.php");
+               ?>
+          </div>
+
+          <div class="row">
+          <?php require("../App/View/display_comment_form.php");?>
+
+          </div>
+          
+           
+  <div id="topics" class="row table-responsive mt-5">
+    <table class="table">
+     
+
+    </table>
+</div>
+<div class="row">
+              <div class="col-12 d-flex align-items-center justify-content-start m-4">
+
+              <?php require '../App/View/display_Reply.php';?>
+               
+                <div class="dropdown mr-5 pr-3">
+                  <button class="btn btn-secondary dropdown-toggle rounded-pill  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-wrench p-0"></i>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 mt-5 d-flex">
+                <a id="return-board" class="h4 mr-5 text-dark p-3" href="index.php">&lt; Return to Board Index</a> <a id="jump-to" class="h4 mr-5 text-dark bg-light p-3 ml-auto" href="#">Jump to ^</a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3 col-lg-3 px-5">
           <?php include("../App/View/reduced_profile.php"); ?>
-           <!-- Search Bar -->
-         <form action="topics.php" method="GET" id="search-bar" class="form-inline flex-nowrap">
+          <!-- Search Bar -->
+          <form action="topics.php" method="GET" id="search-bar" class="form-inline flex-nowrap">
           <input name="search" class="form-control w-100" type="search"
           placeholder="Search" aria-label="Search">
           <button class="btn btn-
@@ -108,7 +217,7 @@
               </thead>
               <tbody class="bg-light d-flex justify-content-center">
                 <tr>
-                  <?php require("../App/View/last_posts.php"); ?>
+                <?php require("../App/View/last_posts.php"); ?>
                 </tr>
               </tbody>
             </table>
@@ -122,7 +231,23 @@
               </thead>
               <tbody class="bg-light">
                 <tr class="d-flex justify-content-center flex-wrap">
-                 <?php require("../App/View/last_active_display.php"); ?>
+                <?php require("../App/View/last_active_display.php"); ?>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive mt-5">
+            <table id="widget-side" class="table">
+              <thead class="thead bg-dark text-white">
+                <tr>
+                  <th scope="col" class="h3">Blank Widget (ALT block)</th>
+                </tr>
+              </thead>
+              <tbody class="bg-light">
+                <tr class="d-flex justify-content-center flex-wrap">
+                  <td id="last-active-card" class="bg-white w-75 my-3">
+                    <h2>Some information goes here :)</h2>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -130,6 +255,7 @@
         </div>
       </div>
     </div>
+    
   </main>
   <footer>
   <div class="container-fluid" id="social-media">
@@ -141,7 +267,7 @@
         <li class="p-3 mr-4"><a href="#"><i class="fab fa-youtube text-white"></i></a></li>
         <li class="p-3 mr-4"><a href="#"><i class="fab fa-github text-white"></i></a></li>
         <li class="p-3 mr-4"><a href="#"><i class="fab fa-whatsapp text-white"></i></a></li>
-      </ul>
+       </ul>
     </div>
     <div class="container-fluid bg-dark my-n3">
       <div class="row">

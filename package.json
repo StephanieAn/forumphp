@@ -1,19 +1,19 @@
 {
-  "name": "forum",
+  "name": "hell-forum",
   "version": "1.0.0",
-  "description": "",
+  "description": "> PHP/MySQL Bulletin Board Project",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./src/public/style/scss/style.scss:./src/public/style/css/style.css"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StephanieAn/forumphp.git"
+    "url": "git+https://github.com/Tompouday/hell_forum.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/StephanieAn/forumphp/issues"
+    "url": "https://github.com/Tompouday/hell_forum/issues"
   },
-  "homepage": "https://github.com/StephanieAn/forumphp#readme"
+  "homepage": "https://github.com/Tompouday/hell_forum#readme"
 }

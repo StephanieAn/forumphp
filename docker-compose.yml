@@ -2,7 +2,8 @@
 version: "3"
 services:
   php:
-    image: "becodeorg/php"
+    # image: "becodeorg/php"
+    build: "./"
     volumes:
       - "./src:/var/www/html"
     ports:
@@ -13,9 +14,10 @@ services:
     volumes:
       - "mysql_db:/var/lib/mysql"
     ports:
-      - "3306:3306"
-      - "33060:33060"
+      - "3307:3307"
+      - "33070:33070"
     environment:
+      MYSQL_ROOT_USER: "root"
       MYSQL_ROOT_PASSWORD: "root"
   phpmyadmin:
     image: "phpmyadmin/phpmyadmin"
