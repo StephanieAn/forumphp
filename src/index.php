@@ -23,20 +23,20 @@ try{
     <header>
         <h1>The Savage Forum</h1>
         <ul>
-            <li>Register</li>
-            <li>Log In</li>
+            <li><a href="">Register</a></li>
+            <li><a href="">Log In</a></li>
         </ul>
     </header>
 
     <main>
         <div class="title"> 
             <h2> <? foreach ($variable as $key => $value) {
-                # code...
+                echo '';
             } ?></h2>
         </div>
         <div class="board">
             <? foreach ($variable as $key => $value) {
-                # code...
+                echo '';
             }?>
         </div>
     </main>
