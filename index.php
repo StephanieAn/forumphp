@@ -9,7 +9,7 @@
 <body>
 
     <?php
-    include("src/public/index.php");
+    include("./src/public/index.php");
     ?>
     Is it working?
     
