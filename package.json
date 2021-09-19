@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tompouday/hell_forum.git"
+    "url": "git+https://github.com/Tompouday/forumphp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tompouday/hell_forum/issues"
+    "url": "https://github.com/Tompouday/forumphp/issues"
   },
-  "homepage": "https://github.com/Tompouday/hell_forum#readme"
+  "homepage": "https://github.com/Tompouday/forumphp#readme"
 }
