@@ -69,7 +69,7 @@ else{
         class=""
         style="
           background: center/cover
-            url('https://cdn.pixabay.com/photo/2016/07/29/19/19/railway-1555348_960_720.jpg');
+            url('https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_960_720.jpg');
         "
       >
         <div class="container-fluid p-5 text-center">
