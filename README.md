@@ -10,7 +10,7 @@
 | Deadline             | `20/09/2021 08h59`                                                                                                                                                                         |
 | Deployment method    | `Heroku`                                                                                                                                                                                   |
 | Group composition    | `4`                                                                                                                                                                                        |
-| Project submission   | coming soon                                                                                                                                                                                |
+| Project submission   | [THE SAVANE](https://forum-savane.herokuapp.com/#)                                                                                                                                                                                |
 | Developer            | [Engie-Paquot](https://github.com/Engie-Paquot) , [StepahnieAN](https://github.com/StephanieAn), [Thibaut3005](https://github.com/Thibaut3005) & [Tompouday](https://github.com/Tompouday) |
 
 ---
